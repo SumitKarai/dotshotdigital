@@ -1,0 +1,52 @@
+/* About Page Specific Styles */
+.founder-section {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.founder-image-wrapper {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--glass-border);
+}
+
+.founder-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.founder-image-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+.founder-badge {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 10px 20px rgba(249, 115, 22, 0.3);
+}
+
+@media (max-width: 992px) {
+    .founder-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .founder-image-wrapper {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}

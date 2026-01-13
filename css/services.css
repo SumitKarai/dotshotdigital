@@ -1,0 +1,158 @@
+/* Services Page Specific Styles */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background: var(--card-bg);
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.service-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.1);
+}
+
+.service-info {
+    padding: 25px;
+    text-align: center;
+    background: linear-gradient(to top, var(--card-bg), transparent);
+}
+
+.service-info h3 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin: 0;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.service-card:hover .service-info h3 {
+    color: var(--primary);
+}
+
+/* Feature Section Styles */
+.service-feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-bottom: 120px;
+}
+
+.service-feature:last-child {
+    margin-bottom: 0;
+}
+
+.service-feature.reverse {
+    direction: rtl;
+}
+
+.service-feature.reverse .feature-content {
+    direction: ltr;
+}
+
+.feature-image {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--glass-border);
+}
+
+.feature-image img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.8s ease;
+}
+
+.feature-image:hover img {
+    transform: scale(1.05);
+}
+
+.feature-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    line-height: 1.2;
+}
+
+.feature-content p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.feature-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+    color: var(--primary);
+}
+
+.feature-list li::before {
+    content: '→';
+    font-weight: 900;
+}
+
+@media (max-width: 992px) {
+    .service-feature {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    .service-feature.reverse {
+        direction: ltr;
+    }
+
+    .feature-image img {
+        height: 350px;
+    }
+
+    .feature-list {
+        grid-template-columns: 1fr;
+        text-align: left;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
