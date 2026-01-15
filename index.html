@@ -15,12 +15,55 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="css/services.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .testimonial-slider {
+            overflow: hidden;
+            max-width: 100%;
+            position: relative;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.6s ease;
+        }
+
+        .testimonial {
+            min-width: 100%;
+            padding: 30px;
+            border-top: 4px solid var(--primary);
+        }
+
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .slider-dots span {
+            width: 10px;
+            height: 10px;
+            background: #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .slider-dots span.active {
+            background: var(--primary);
+        }
+    </style>
 </head>
 
 <body>
 
     <header>
-        <a href="index.html" class="logo">DotShot Digital </a>
+        <a href="index.html" class="logo"><img src="assets/images/dotshot-logo.png" alt="dotshot digital logo"></a>
         <button class="menu-btn" id="menuBtn">
             ☰
         </button>
@@ -74,11 +117,7 @@
         <section class="stats-section">
             <div class="stats-grid">
                 <div class="stat-card">
-                    <span class="stat-number" data-target="300">0</span>
-                    <p class="stat-label">Projects Delivered</p>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-number" data-target="100">0</span>
+                    <span class="stat-number" data-target="270">0</span>
                     <p class="stat-label">Happy Clients</p>
                 </div>
                 <div class="stat-card">
@@ -160,23 +199,39 @@
                 <h2>Client Stories</h2>
                 <p>See how our clients have transformed with our digital marketing and creative solutions.</p>
             </div>
-            <div class="grid">
-                <div class="card" style="border-top: 4px solid var(--primary);">
-                    <p style="font-style: italic; margin-bottom: 20px;">"DotShot Digital has been a game-changer for our
-                        business. Their innovative approach to digital marketing has helped us reach new heights and
-                        grow
-                        our brand. Highly recommended!"</p>
-                    <strong>- Rahul Sharma</strong>
-                    <p style="font-size: 0.8rem; opacity: 0.6;">CEO, Tech Innovations</p>
-                </div>
-                <div class="card" style="border-top: 4px solid var(--primary);">
-                    <p style="font-style: italic; margin-bottom: 20px;">"The team is incredibly creative and responsive.
-                        They truly understand modern digital aesthetics."</p>
-                    <strong>- Priya Verma</strong>
-                    <p style="font-size: 0.8rem; opacity: 0.6;">Founder, Bloom Boutique</p>
+
+            <div class="testimonial-slider">
+                <div class="testimonial-track">
+
+                    <div class="card testimonial">
+                        <p>“Amazing work guys 👍 I found all my desires in my brand logo 🫶🏻”</p>
+                        <strong>— Chadani Verma</strong>
+                    </div>
+
+                    <div class="card testimonial">
+                        <p>“Excellent work from DotShot! They helped us increase our online visibility and drive more
+                            leads.
+                            Highly recommend! (Ashish Yadav – Shiti Events)”</p>
+                        <strong>— Ashish Yadav</strong>
+                    </div>
+
+                    <div class="card testimonial">
+                        <p>“A great experience, learned lots of things and got valuable advice.
+                            Just go to DotShot!”</p>
+                        <strong>— Khushal Singh Chandrawat</strong>
+                    </div>
+
+                    <div class="card testimonial">
+                        <p>“Best printing and social media work with very supportive staff.”</p>
+                        <strong>— Rajendra Sharma</strong>
+                    </div>
+
                 </div>
             </div>
+
+            <div class="slider-dots" id="sliderDots"></div>
         </section>
+
     </main>
 
 
@@ -297,8 +352,38 @@
             <p>© 2026 DotShot Digital. All rights reserved. | Indore, MP</p>
         </div>
     </footer>
-
     <script src="js/main.js"></script>
+    <script>
+        const track = document.querySelector('.testimonial-track');
+        const slides = document.querySelectorAll('.testimonial');
+        const dotsContainer = document.getElementById('sliderDots');
+
+        let index = 0;
+
+        slides.forEach((_, i) => {
+            const dot = document.createElement('span');
+            dot.addEventListener('click', () => moveToSlide(i));
+            dotsContainer.appendChild(dot);
+        });
+
+        const dots = dotsContainer.querySelectorAll('span');
+
+        function moveToSlide(i) {
+            index = i;
+            track.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+
+        function autoSlide() {
+            index = (index + 1) % slides.length;
+            moveToSlide(index);
+        }
+
+        dots[0].classList.add('active');
+        setInterval(autoSlide, 3000);
+    </script>
+
 </body>
 
 </html>

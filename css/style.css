@@ -55,6 +55,8 @@ header {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration: none;
+    width: 200px;
+    height: 25px;
 }
 
 .menu-btn {
@@ -280,6 +282,8 @@ nav a:hover {
     margin-bottom: 1rem;
     color: var(--primary);
 }
+
+
 
 /* Footer */
 footer {
