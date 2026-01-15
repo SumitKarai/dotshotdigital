@@ -11,29 +11,36 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/contact.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
 
     <header>
-        <a href="../index.html" class="logo">DotShot Digital</a>
-        <nav>
+        <a href="index.html" class="logo">DotShot Digital </a>
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+        <nav id="navMenu">
             <a href="../index.html">Home</a>
             <a href="about.html">About</a>
             <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
             <a href="contact.html" class="active">Contact</a>
         </nav>
     </header>
 
     <main>
-        <section class="hero" style="min-height: 40vh;">
-            <h1 class="reveal">Get In <span style="color: var(--primary)">Touch</span></h1>
-            <p class="reveal">Have a project in mind? Let's build something amazing together.</p>
+        <section class="hero"
+            style="min-height: 40vh; background: linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.8)), url('https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; background-attachment: fixed;">
+            <h1>Get In <span style="color: var(--primary)">Touch</span></h1>
+            <p>Have a project in mind? Let's build something amazing together.</p>
         </section>
 
         <section class="section">
             <div class="contact-container">
-                <div class="contact-info reveal">
+                <div class="contact-info">
                     <div class="info-item">
                         <div class="info-icon">📍</div>
                         <div class="info-text">
@@ -64,7 +71,7 @@
                     </div>
                 </div>
 
-                <div class="contact-form reveal">
+                <div class="contact-form">
                     <form id="contactForm">
                         <div class="form-group">
                             <label for="name">Full Name</label>
@@ -84,8 +91,7 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" rows="5" placeholder="Tell us about your project..."
-                                required></textarea>
+                            <input type="text" id="message" placeholder="Tell us about your project..." required>
                         </div>
                         <button type="submit" class="btn"
                             style="width: 100%; background: #25D366; border: none; display: flex; align-items: center; justify-content: center; gap: 10px;">
@@ -114,6 +120,7 @@
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Our Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>

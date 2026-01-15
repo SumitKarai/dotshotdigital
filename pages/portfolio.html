@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | DotShot Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Tailwind Output -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass-card {
+            background: rgba(15, 23, 42, 0.3);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .project-overlay {
+            background: linear-gradient(to top, rgba(2, 6, 23, 0.9) 0%, rgba(2, 6, 23, 0) 100%);
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .reveal-on-scroll {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .filter-btn {
+            transition: all 0.3s ease;
+            color: #94a3b8;
+            font-weight: 500;
+        }
+
+        .filter-btn.active {
+            background-color: #f97316;
+            color: white;
+            box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.4);
+        }
+
+        /* Instagram Embed Styling */
+        .instagram-wrapper {
+            width: 100%;
+            height: 500px;
+            /* Portrait height for reels/portrait videos */
+            overflow: hidden;
+            position: relative;
+            background: rgba(15, 23, 42, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .instagram-wrapper blockquote {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            min-width: 100% !important;
+            border: none !important;
+            box-shadow: none !important;
+            background: transparent !important;
+        }
+
+        /* Ensure the injected iframe fills the container */
+        .instagram-wrapper iframe {
+            min-width: 100% !important;
+            width: 100% !important;
+            height: 100% !important;
+            border: none !important;
+        }
+
+        /* Category Title Styling */
+        .category-title {
+            grid-column: 1 / -1;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+            letter-spacing: -0.05em;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .category-title::after {
+            content: '';
+            flex-grow: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-[#020617] text-slate-100 selection:bg-orange-500/30">
+
+    <header>
+        <a href="index.html" class="logo">DotShot Digital </a>
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+        <nav id="navMenu">
+            <a href="../index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="portfolio.html" class="active">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <!-- Immersive Hero Section -->
+        <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden px-6">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute top-1/4 -left-20 w-96 h-96 bg-orange-500/10 rounded-full blur-[120px]"></div>
+                <div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px]"></div>
+            </div>
+
+            <div class="relative z-10 text-center max-w-4xl">
+                <span
+                    class="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-widest uppercase bg-orange-500/10 text-orange-400 rounded-full border border-orange-500/20">
+                    Our Work
+                </span>
+                <h1 class="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-tight">
+                    Crafting <span class="text-gradient">Digital</span><br>Masterpieces
+                </h1>
+                <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+                    We don't just build design, video or website; we create immersive digital journeys that define
+                    brands and drive unprecedented growth.
+                </p>
+            </div>
+        </section>
+
+        <!-- Filter Bar -->
+        <section class="flex flex-wrap justify-center gap-4 m-10">
+            <button class="filter-btn active px-6 py-2 rounded-full" data-filter="all">All Work</button>
+            <button class="filter-btn px-6 py-2 rounded-full" data-filter="graphic-design">Graphic Design</button>
+            <button class="filter-btn px-6 py-2 rounded-full" data-filter="web">Web Development</button>
+            <button class="filter-btn px-6 py-2 rounded-full" data-filter="marketing">Marketing</button>
+            <button class="filter-btn px-6 py-2 rounded-full" data-filter="video">Video Editing</button>
+        </section>
+
+        <!-- Portfolio Grid -->
+        <section class="px-6 max-w-7xl mx-auto pb-32">
+            <div class="grid md:grid-cols-3 gap-8" id="portfolio-grid">
+
+                <!-- Graphic Design Section -->
+                <div class="portfolio-item category-title" data-category="graphic-design">
+                    <span class="text-gradient">Graphic Design</span>
+                </div>
+
+                <div class="portfolio-item" data-category="graphic-design">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <img src="../assets/graphic/graphic1.jpg" class="w-full h-64 object-cover" />
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold">Brand Identity Design</h3>
+                            <p class="text-slate-400 text-sm">Branding</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="graphic-design">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <img src="../assets/graphic/graphic2.jpg" class="w-full h-64 object-cover" />
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold">Brand Identity Design</h3>
+                            <p class="text-slate-400 text-sm">Branding</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Design Section -->
+                <div class="portfolio-item category-title" data-category="web">
+                    <span class="text-gradient">Web Development</span>
+                </div>
+
+                <div class="portfolio-item" data-category="web">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <img src="../images/project1.jpg" class="w-full h-64 object-cover" />
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold">E-Commerce Website</h3>
+                            <p class="text-slate-400 text-sm">Web Design</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketing Section -->
+                <div class="portfolio-item category-title" data-category="marketing">
+                    <span class="text-gradient">Marketing</span>
+                </div>
+
+                <div class="portfolio-item" data-category="marketing">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <img src="../images/project2.jpg" class="w-full h-64 object-cover" />
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold">Instagram Growth Campaign</h3>
+                            <p class="text-slate-400 text-sm">Marketing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Editing Section -->
+                <div class="portfolio-item category-title" data-category="video">
+                    <span class="text-gradient">Video Editing</span>
+                </div>
+
+                <!-- Video Editing 1 -->
+                <div class="portfolio-item" data-category="video">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <div class="instagram-wrapper">
+                            <blockquote class="instagram-media" data-instgrm-captioned
+                                data-instgrm-permalink="https://www.instagram.com/reel/DRTuIERDDN3/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                data-instgrm-version="14">
+                                <a href="https://www.instagram.com/reel/DRTuIERDDN3/">View Reel</a>
+                            </blockquote>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold">Your dent clinic</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Editing 2 -->
+                <div class="portfolio-item" data-category="video">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <div class="instagram-wrapper">
+                            <blockquote class="instagram-media" data-instgrm-captioned
+                                data-instgrm-permalink="https://www.instagram.com/reel/DRZJTdTDLM0/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                data-instgrm-version="14">
+                                <a href="https://www.instagram.com/reel/DRZJTdTDLM0/">View Reel</a>
+                            </blockquote>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold">Your dent clinic</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Editing 3 -->
+                <div class="portfolio-item" data-category="video">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <div class="instagram-wrapper">
+                            <blockquote class="instagram-media" data-instgrm-captioned
+                                data-instgrm-permalink="https://www.instagram.com/reel/DQ-8dAtjAP7/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                data-instgrm-version="14">
+                                <a href="https://www.instagram.com/reel/DQ-8dAtjAP7/">View Reel</a>
+                            </blockquote>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold">Wedding Invitation</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Editing 4 -->
+                <div class="portfolio-item" data-category="video">
+                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
+                        <div class="instagram-wrapper">
+                            <blockquote class="instagram-media" data-instgrm-captioned
+                                data-instgrm-permalink="https://www.instagram.com/reel/DK_YyXZTMw6/?utm_source=ig_embed&amp;utm_campaign=loading"
+                                data-instgrm-version="14">
+                                <a href="https://www.instagram.com/reel/DK_YyXZTMw6/">View Reel</a>
+                            </blockquote>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold">Bridal Video Shoot</h3>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Premium CTA Section -->
+        <section class="px-6 py-40 relative overflow-hidden">
+            <div class="absolute inset-0 bg-orange-500/5"></div>
+            <div class="relative z-10 max-w-4xl mx-auto text-center">
+                <h2 class="text-5xl md:text-7xl font-black mb-10 tracking-tight">
+                    Let's build your <span class="text-gradient">legacy</span>.
+                </h2>
+                <a href="contact.html"
+                    class="inline-block px-12 py-5 bg-orange-500 text-white font-black rounded-full hover:bg-orange-600 transition-all hover:scale-105 shadow-2xl shadow-orange-500/40 text-lg">
+                    Start a Conversation
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/5">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>DotShot Digital</h3>
+                <p>Redefining digital excellence through innovation and design.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Behance</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 DotShot Digital. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        // Portfolio Filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.getAttribute('data-filter');
+
+                // Active button styling
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Filter items
+                portfolioItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+
+                    if (filter === 'all' || category === filter) {
+                        item.style.display = 'flex'; // Use flex for titles to maintain alignment
+                        if (!item.classList.contains('category-title')) {
+                            item.style.display = 'block'; // Standard items are block
+                        }
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, 10);
+                    } else {
+                        item.style.display = 'none';
+                        item.style.opacity = '0';
+                        item.style.transform = 'translateY(20px)';
+                    }
+                });
+            });
+        });
+    </script>
+    <!-- Instagram script -->
+    <script async src="https://www.instagram.com/embed.js"></script>
+</body>
+
+</html>

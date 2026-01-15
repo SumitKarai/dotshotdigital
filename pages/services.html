@@ -11,29 +11,36 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/services.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
 
     <header>
-        <a href="../index.html" class="logo">DotShot Digital</a>
-        <nav>
+        <a href="index.html" class="logo">DotShot Digital </a>
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+        <nav id="navMenu">
             <a href="../index.html">Home</a>
             <a href="about.html">About</a>
             <a href="services.html" class="active">Services</a>
+            <a href="portfolio.html">Portfolio</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
 
     <main>
-        <section class="hero" style="min-height: 40vh;">
-            <h1 class="reveal">Our <span style="color: var(--primary)">Services</span></h1>
-            <p class="reveal">Comprehensive digital solutions tailored to your business needs.</p>
+        <section class="hero"
+            style="min-height: 40vh; background: linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.8)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; background-attachment: fixed;">
+            <h1>Our <span style="color: var(--primary)">Services</span></h1>
+            <p>Comprehensive digital solutions tailored to your business needs.</p>
         </section>
 
         <section class="section">
             <!-- Digital Marketing -->
-            <div class="service-feature reveal">
+            <div class="service-feature">
                 <div class="feature-image">
                     <img src="../assets/images/digital-marketing.png" alt="Digital Marketing">
                 </div>
@@ -56,7 +63,7 @@
             </div>
 
             <!-- Social Media Management -->
-            <div class="service-feature reverse reveal">
+            <div class="service-feature reverse">
                 <div class="feature-image">
                     <img src="../assets/images/social-media.png" alt="Social Media Management">
                 </div>
@@ -78,7 +85,7 @@
             </div>
 
             <!-- Web Development -->
-            <div class="service-feature reveal">
+            <div class="service-feature">
                 <div class="feature-image">
                     <img src="../assets/images/web-dev.png" alt="Web Development">
                 </div>
@@ -101,7 +108,7 @@
             </div>
 
             <!-- Graphic Design -->
-            <div class="service-feature reverse reveal">
+            <div class="service-feature reverse">
                 <div class="feature-image">
                     <img src="../assets/images/graphic-design.png" alt="Graphic Design">
                 </div>
@@ -123,7 +130,7 @@
             </div>
 
             <!-- Product & Brand Photoshoot -->
-            <div class="service-feature reveal">
+            <div class="service-feature">
                 <div class="feature-image">
                     <img src="../assets/images/photoshoot.png" alt="Product and Brand Photoshoot">
                 </div>
@@ -145,7 +152,7 @@
             </div>
 
             <!-- Video Editing -->
-            <div class="service-feature reverse reveal">
+            <div class="service-feature reverse">
                 <div class="feature-image">
                     <img src="../assets/images/video-editing.png" alt="Video Editing">
                 </div>
@@ -169,7 +176,7 @@
 
         <section class="section"
             style="text-align: center; background: linear-gradient(to bottom, transparent, var(--card-bg));">
-            <div class="reveal">
+            <div>
                 <h2>Ready to transform your digital presence?</h2>
                 <p style="margin-bottom: 2rem;">Let's discuss how our specialized services can drive your growth.</p>
                 <a href="contact.html" class="btn">Get a Free Consultation</a>
@@ -189,6 +196,7 @@
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Our Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>

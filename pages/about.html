@@ -11,36 +11,42 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/about.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
 
     <header>
-        <a href="../index.html" class="logo">DotShot Digital</a>
-        <nav>
+        <a href="index.html" class="logo">DotShot Digital </a>
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+        <nav id="navMenu">
             <a href="../index.html">Home</a>
             <a href="about.html" class="active">About</a>
             <a href="services.html">Services</a>
+            <a href="portfolio.html">Portfolio</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
 
     <main>
-        <section class="hero" style="min-height: 40vh;">
-            <h1 class="reveal">About <span style="color: var(--primary)">DotShot Digital</span></h1>
-            <p class="reveal">A team of passionate creators and strategists dedicated to your growth.</p>
+        <section class="hero"
+            style="min-height: 40vh; background: linear-gradient(rgba(2, 6, 23, 0.8), rgba(2, 6, 23, 0.8)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; background-attachment: fixed;">
+            <h1>About <span style="color: var(--primary)">DotShot Digital</span></h1>
+            <p>A team of passionate creators and strategists dedicated to your growth.</p>
         </section>
 
         <section class="section">
             <div class="founder-section">
-                <div class="reveal">
+                <div>
                     <div class="founder-image-wrapper">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop"
-                            alt="Shraddha Yadav">
+                        <img src="../assets/images/ceo.jpg" alt="Shraddha Yadav">
                         <div class="founder-badge">Founder & Owner</div>
                     </div>
                 </div>
-                <div class="reveal">
+                <div>
                     <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Meet Our <span
                             style="color: var(--primary)">Founder</span></h2>
                     <h3 style="font-size: 1.8rem; margin-bottom: 1rem; color: #fff;">Shraddha Yadav</h3>
@@ -67,21 +73,21 @@
         </section>
 
         <section class="section" style="background: var(--card-bg);">
-            <div class="section-header reveal">
+            <div class="section-header">
                 <h2>Our Mission</h2>
                 <p>To empower brands through innovative digital solutions that create meaningful connections.</p>
             </div>
             <div class="grid">
-                <div class="card reveal">
+                <div class="card">
                     <h3>Creativity</h3>
                     <p>We push boundaries to deliver unique visual identities that stand out in a crowded market.</p>
                 </div>
-                <div class="card reveal">
+                <div class="card">
                     <h3>Integrity</h3>
                     <p>Transparent communication and honest strategies are the foundation of our client relationships.
                     </p>
                 </div>
-                <div class="card reveal">
+                <div class="card">
                     <h3>Results</h3>
                     <p>We are obsessed with performance. If it doesn't move the needle, we don't do it.</p>
                 </div>
@@ -90,7 +96,7 @@
 
         <section class="section">
             <div class="grid" style="grid-template-columns: 1fr 1fr; align-items: center;">
-                <div class="reveal">
+                <div>
                     <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">Our Story</h2>
                     <p style="margin-bottom: 1rem;">Founded in 2023 in the heart of Indore, DotShot Digital began with a
                         simple mission: to help local businesses navigate the complex digital landscape with ease and
@@ -98,7 +104,7 @@
                     <p>What started as a small team has grown into a full-service agency, serving clients across
                         various industries with cutting-edge marketing and design solutions.</p>
                 </div>
-                <div class="reveal"
+                <div
                     style="background: var(--primary); height: 300px; border-radius: 24px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 3rem; font-weight: 900;">
                     EST. 2023
                 </div>
@@ -118,6 +124,7 @@
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Our Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
