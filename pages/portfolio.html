@@ -1,105 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
+<link rel="canonical" href="https://dotshotdigital.com/pages/portfolio.html" />
+<meta name="robots" content="index, follow" />
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio | DotShot Digital</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <!-- Global Styles -->
-    <link rel="stylesheet" href="../css/style.css">
-    <!-- Tailwind Output -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .glass-card {
-            background: rgba(15, 23, 42, 0.3);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://dotshotdigital.com/pages/portfolio.html" />
+<meta property="og:title" content="Our Portfolio | Creative Work & Case Studies | DotShot Digital" />
+<meta property="og:description"
+    content="See how we've helped brands grow with our creative digital solutions. Explore our latest projects." />
+<meta property="og:image" content="https://dotshotdigital.com/assets/graphic/graphic1.jpg" />
 
-        .project-overlay {
-            background: linear-gradient(to top, rgba(2, 6, 23, 0.9) 0%, rgba(2, 6, 23, 0) 100%);
-        }
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://dotshotdigital.com/pages/portfolio.html" />
+<meta property="twitter:title" content="Our Portfolio | Creative Work & Case Studies | DotShot Digital" />
+<meta property="twitter:description"
+    content="See how we've helped brands grow with our creative digital solutions. Explore our latest projects." />
+<meta property="twitter:image" content="https://dotshotdigital.com/assets/graphic/graphic1.jpg" />
 
-        .text-gradient {
-            background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+<!-- Global Styles -->
+<link rel="stylesheet" href="../css/style.css">
+<!-- Tailwind Output -->
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    .glass-card {
+        background: rgba(15, 23, 42, 0.3);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
 
-        .reveal-on-scroll {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .project-overlay {
+        background: linear-gradient(to top, rgba(2, 6, 23, 0.9) 0%, rgba(2, 6, 23, 0) 100%);
+    }
 
-        .filter-btn {
-            transition: all 0.3s ease;
-            color: #94a3b8;
-            font-weight: 500;
-        }
+    .text-gradient {
+        background: linear-gradient(135deg, #fb923c 0%, #f97316 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
-        .filter-btn.active {
-            background-color: #f97316;
-            color: white;
-            box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.4);
-        }
+    .reveal-on-scroll {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-        /* Instagram Embed Styling */
-        .instagram-wrapper {
-            width: 100%;
-            height: 500px;
-            /* Portrait height for reels/portrait videos */
-            overflow: hidden;
-            position: relative;
-            background: rgba(15, 23, 42, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .filter-btn {
+        transition: all 0.3s ease;
+        color: #94a3b8;
+        font-weight: 500;
+    }
 
-        .instagram-wrapper blockquote {
-            margin: 0 !important;
-            padding: 0 !important;
-            width: 100% !important;
-            min-width: 100% !important;
-            border: none !important;
-            box-shadow: none !important;
-            background: transparent !important;
-        }
+    .filter-btn.active {
+        background-color: #f97316;
+        color: white;
+        box-shadow: 0 10px 15px -3px rgba(249, 115, 22, 0.4);
+    }
 
-        /* Ensure the injected iframe fills the container */
-        .instagram-wrapper iframe {
-            min-width: 100% !important;
-            width: 100% !important;
-            height: 100% !important;
-            border: none !important;
-        }
+    /* Instagram Embed Styling */
+    .instagram-wrapper {
+        width: 100%;
+        height: 500px;
+        /* Portrait height for reels/portrait videos */
+        overflow: hidden;
+        position: relative;
+        background: rgba(15, 23, 42, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-        /* Category Title Styling */
-        .category-title {
-            grid-column: 1 / -1;
-            font-size: 2.5rem;
-            font-weight: 900;
-            margin-top: 3rem;
-            margin-bottom: 1rem;
-            letter-spacing: -0.05em;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
+    .instagram-wrapper blockquote {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        border: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+    }
 
-        .category-title::after {
-            content: '';
-            flex-grow: 1;
-            height: 1px;
-            background: rgba(255, 255, 255, 0.1);
-        }
-    </style>
+    /* Ensure the injected iframe fills the container */
+    .instagram-wrapper iframe {
+        min-width: 100% !important;
+        width: 100% !important;
+        height: 100% !important;
+        border: none !important;
+    }
+
+    /* Category Title Styling */
+    .category-title {
+        grid-column: 1 / -1;
+        font-size: 2.5rem;
+        font-weight: 900;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+        letter-spacing: -0.05em;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .category-title::after {
+        content: '';
+        flex-grow: 1;
+        height: 1px;
+        background: rgba(255, 255, 255, 0.1);
+    }
+</style>
 </head>
 
 <body class="bg-[#020617] text-slate-100 selection:bg-orange-500/30">
@@ -340,7 +352,7 @@
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="portfolio.html" class="active">Portfolio</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
