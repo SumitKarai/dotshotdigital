@@ -4,7 +4,11 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="assets/images/dotshot-logo.png">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
     <title>DotShot Digital | Premium Digital Marketing Agency in Indore</title>
     <meta name="description"
         content="DotShot Digital is a premier digital marketing and creative agency in Indore. We specialize in web development, social media management, graphic design, and visual branding." />
@@ -38,6 +42,49 @@
     <link rel="stylesheet" href="css/services.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        .temporary-paywall {
+            position: fixed;
+            inset: 0;
+            background: #0b0f1a;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .temporary-paywall-content {
+            max-width: 720px;
+        }
+
+        .temporary-paywall h1 {
+            font-size: clamp(28px, 4vw, 48px);
+            margin: 0 0 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .temporary-paywall p {
+            font-size: clamp(16px, 2.2vw, 20px);
+            margin: 0 0 18px;
+            opacity: 0.85;
+        }
+
+        .temporary-paywall a {
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            padding: 10px 18px;
+            border-radius: 999px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .temporary-paywall a:hover {
+            background: #ffffff;
+            color: #0b0f1a;
+        }
+
         .testimonial-slider {
             overflow: hidden;
             max-width: 100%;
@@ -83,6 +130,12 @@
 </head>
 
 <body>
+    <div class="temporary-paywall" aria-live="polite">
+        <div class="temporary-paywall-content">
+            <h1>Site Temporarily Down</h1>
+            <p>We're currently updating our hosting and development services. Please check back soon.</p>
+        </div>
+    </div>
 
     <header>
         <a href="index.html" class="logo"><img src="assets/images/dotshot-logo.png" alt="dotshot digital logo"></a>
