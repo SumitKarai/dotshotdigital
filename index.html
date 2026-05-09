@@ -42,7 +42,6 @@
     <link rel="stylesheet" href="css/services.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      
         .testimonial-slider {
             overflow: hidden;
             max-width: 100%;
@@ -84,6 +83,30 @@
         .slider-dots span.active {
             background: var(--primary);
         }
+
+        /* Marquee Animation */
+        @keyframes marquee-scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .marquee-track span {
+            color: #fff;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 1.1rem;
+        }
+
+        .marquee-track span:nth-child(even) {
+            color: rgba(255, 255, 255, 0.3);
+            /* Dim separator dots */
+        }
     </style>
 </head>
 
@@ -118,7 +141,47 @@
             </div>
         </section>
 
-        <section class="section">
+        <!-- Scrolling Marquee Section -->
+        <section
+            style="background-color: #000; padding: 50px 0; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
+            <div style="text-align: center; margin-bottom: 40px; padding: 0 20px;">
+                <p
+                    style="color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">
+                    Welcome to Dotshot Digital</p>
+                <h2 style="color: #fff; font-size: 2.5rem; font-weight: 800;">Your Digital Growth Partner <span
+                        style="color: var(--primary);"></span></h2>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center w-full max-w-[1200px] mx-auto px-5 overflow-hidden">
+                <div
+                    class="text-[3rem] md:text-[4rem] font-medium whitespace-nowrap md:pr-[30px] md:border-r-2 md:border-white/20 z-10 md:mr-[30px] mb-4 md:mb-0 text-[var(--primary)] uppercase tracking-[1px] text-center">
+                    What We Do
+                </div>
+                <div class="w-full"
+                    style="display: flex; flex: 1; overflow: hidden; mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);">
+                    <div class="marquee-track"
+                        style="display: flex; gap: 40px; padding-left: 20px; white-space: nowrap; animation: marquee-scroll 20s linear infinite; width: max-content;">
+                        <span>Local SEO</span><span>•</span>
+                        <span>Web Design</span><span>•</span>
+                        <span>Social Media</span><span>•</span>
+                        <span>Video Editing</span><span>•</span>
+                        <span>Graphic Design</span><span>•</span>
+                        <!-- Repeated for smooth infinite scroll loop -->
+                        <span>Local SEO</span><span>•</span>
+                        <span>Web Design</span><span>•</span>
+                        <span>Social Media</span><span>•</span>
+                        <span>Video Editing</span><span>•</span>
+                        <span>Graphic Design</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="w-full">
+            <img src="assets/images/ceo2.png" alt="CEO Banner" class="w-full h-auto block">
+        </section>
+
+        <section class="section bg-white-theme" style="padding-top: 80px;">
             <div class="section-header">
                 <h2>Why Choose Us?</h2>
                 <p>We combine creativity with data-driven strategies to deliver exceptional results.</p>
@@ -221,7 +284,7 @@
             </div>
         </section>
 
-        <section class="section" style="background: var(--card-bg);">
+        <section class="section bg-white-theme">
             <div class="section-header">
                 <h2>Client Stories</h2>
                 <p>See how our clients have transformed with our digital marketing and creative solutions.</p>
@@ -347,8 +410,54 @@
                 </div>
             </details>
         </div>
-
     </section>
+
+    <!-- Location / Map Section -->
+    <section class="section" style="padding-top: 80px; padding-bottom: 80px;">
+        <div class="section-header">
+            <h2>Visit Our Office</h2>
+            <p>We're located in the heart of Indore, ready to elevate your brand.</p>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-8 w-full max-w-[1200px] mx-auto px-5">
+            <!-- Contact Info Card (Black & Gray Theme) -->
+            <div class="lg:w-1/3 p-10 rounded-[20px] flex flex-col justify-center shadow-xl"
+                style="background-color: #111111; border: 1px solid #333333;">
+                <h3
+                    style="color: #ffffff; font-size: 1.6rem; font-weight: 700; margin-bottom: 30px; text-transform: uppercase;">
+                    Reach Out</h3>
+
+                <div style="margin-bottom: 25px;">
+                    <strong style="color: var(--primary); font-size: 1.1rem; display: block; margin-bottom: 5px;">📍
+                        Address</strong>
+                    <p style="color: #aaaaaa; line-height: 1.5;">DotShot Digital HQ,<br>Indore, Madhya Pradesh 452001
+                    </p>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <strong style="color: var(--primary); font-size: 1.1rem; display: block; margin-bottom: 5px;">📞
+                        Phone</strong>
+                    <p style="color: #aaaaaa;">+91 98765 43210</p>
+                </div>
+
+                <div>
+                    <strong style="color: var(--primary); font-size: 1.1rem; display: block; margin-bottom: 5px;">✉️
+                        Email</strong>
+                    <p style="color: #aaaaaa;">hello@dotshotdigital.com</p>
+                </div>
+            </div>
+
+            <!-- Google Map -->
+            <div class="lg:w-2/3 rounded-[20px] overflow-hidden shadow-xl"
+                style="border: 1px solid var(--glass-border-alt); min-height: 450px;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117763.55657321556!2d75.78663456385317!3d22.724228428519632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962534f3c7debb7%3A0xe7aedc8adce7b973!2sIndore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1703661144214!5m2!1sen!2sin"
+                    width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(95%) contrast(85%);"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-content">
             <div class="footer-brand">

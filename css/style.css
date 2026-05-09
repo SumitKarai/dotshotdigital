@@ -2,16 +2,20 @@
    CSS VARIABLES (THEMES)
    ===================== */
 :root {
-    --bg: #020617;
-    --text: #f1f5f9;
-    --primary: #fb923c;
-    --primary-dark: #f97316;
-    --accent: #fdba74;
-    --header-bg: rgba(2, 6, 23, 0.8);
-    --card-bg: #0f172a;
-    --footer-bg: #020617;
-    --glass-bg: rgba(15, 23, 42, 0.7);
+    --bg: #000000;
+    --bg-alt: #ffffff;
+    --text: #ffffff;
+    --text-alt: #000000;
+    --primary: #ff6b00;
+    --primary-dark: #cc5500;
+    --accent: #ff8c33;
+    --header-bg: rgba(0, 0, 0, 0.9);
+    --card-bg: #0f0f0f;
+    --card-bg-alt: #f9f9f9;
+    --footer-bg: #050505;
+    --glass-bg: rgba(0, 0, 0, 0.7);
     --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-border-alt: rgba(0, 0, 0, 0.08);
     --shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
     --transition: none;
 }
@@ -215,6 +219,33 @@ nav a:hover {
     padding: 100px 5%;
     max-width: 1200px;
     margin: auto;
+}
+
+/* Light Theme Alternate Section */
+.bg-white-theme {
+    background-color: var(--bg-alt);
+    color: var(--text-alt);
+}
+
+.bg-white-theme .card,
+.bg-white-theme .faq-item {
+    background: var(--card-bg-alt);
+    border: 1px solid var(--glass-border-alt);
+    color: var(--text-alt);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+}
+
+.bg-white-theme .card p,
+.bg-white-theme .faq-answer {
+    color: #444444;
+}
+
+.bg-white-theme .section-header p {
+    color: #555555;
+}
+
+.bg-white-theme .service-info h3 {
+    color: var(--text-alt);
 }
 
 .section-header {

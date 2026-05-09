@@ -1,7 +1,7 @@
 /* Home Page Specific Styles */
 .stats-section {
-    background-color: #0f172a;
-    color: #fff;
+    background-color: var(--card-bg);
+    color: var(--text);
     padding: 80px 5%;
     position: relative;
     overflow: hidden;
