@@ -128,12 +128,22 @@
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
+        <section class="hero relative overflow-hidden">
+            <!-- Background Video Wrapper -->
+            <div class="absolute inset-0 z-[1] pointer-events-none">
+                <iframe
+                    class="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2"
+                    src="https://www.youtube.com/embed/fS4cH2fky5M?autoplay=1&mute=1&loop=1&playlist=fS4cH2fky5M&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
+                    frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            </div>
+            <!-- Dark Overlay -->
+            <!-- <div class="absolute inset-0 bg-slate-900/80 z-[2]"></div> -->
+
+            <div class="hero-content relative z-[3]">
                 <h1>Elevate Your Brand with <span style="color: var(--primary)">Digital Excellence</span>
                 </h1>
-                <p>We craft stunning digital experiences that drive growth, engagement, and lasting
-                    impact for your business.</p>
+                <!-- <p>We craft stunning digital experiences that drive growth, engagement, and lasting
+                    impact for your business.</p> -->
                 <div style="display: flex; gap: 15px; justify-content: center;">
                     <a href="pages/services.html" class="btn">Explore Services</a>
                     <a href="pages/contact.html" class="btn btn-outline">Get in Touch</a>
@@ -141,6 +151,10 @@
             </div>
         </section>
 
+        <section>
+
+
+        </section>
         <!-- Scrolling Marquee Section -->
         <section
             style="background-color: #000; padding: 50px 0; overflow: hidden; border-top: 1px solid rgba(255,255,255,0.05); border-bottom: 1px solid rgba(255,255,255,0.05);">
@@ -227,7 +241,8 @@
                 <!-- digital marketing -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="assets/images/digital-marketing.png" alt="Digital Marketing">
+                        <img src="https://d6xcmfyh68wv8.cloudfront.net/learn-content/uploads/2024/07/6-effective-types-of-digital-marketing.webp"
+                            alt="Digital Marketing">
                     </div>
                     <div class="service-info">
                         <h3> Digital Marketing</h3>
@@ -236,7 +251,8 @@
                 <!-- Graphic Design -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="assets/images/graphic-design.png" alt="Graphic Design">
+                        <img src="https://www.andacademy.com/resources/wp-content/uploads/2025/10/451_banner.webp"
+                            alt="Graphic Design">
                     </div>
                     <div class="service-info">
                         <h3>Graphic Design</h3>
@@ -245,7 +261,8 @@
                 <!-- Product and Brand photoshoot -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="assets/images/photoshoot.png" alt="Product and Brand Photoshoot">
+                        <img src="https://rvrsp.in/wp-content/uploads/2024/09/professional-dslr-camera-with-zoom-lens.jpg"
+                            alt="Product and Brand Photoshoot">
                     </div>
                     <div class="service-info">
                         <h3>Product & Brand Photoshoot</h3>
@@ -254,7 +271,8 @@
                 <!-- Social Media Management -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="assets/images/social-media.png" alt="Social Media Management">
+                        <img src="https://i0.wp.com/famesolutely.com/wp-content/uploads/2024/04/2150063164-jpg.webp?resize=1000%2C667&ssl=1"
+                            alt="Social Media Management">
                     </div>
                     <div class="service-info">
                         <h3>Social Media Management</h3>
@@ -272,7 +290,8 @@
                 <!-- Video Editing -->
                 <div class="service-card">
                     <div class="service-image">
-                        <img src="assets/images/video-editing.png" alt="Video Editing">
+                        <img src="https://sb-wp-assets.storyblocks.com/resources/wp-content/uploads/2024/05/27103627/videoeditorskills_thumbnail-1536x864.jpg"
+                            alt="Video Editing">
                     </div>
                     <div class="service-info">
                         <h3>Video Editing</h3>
@@ -428,30 +447,42 @@
 
                 <div style="margin-bottom: 25px;">
                     <strong style="color: var(--primary); font-size: 1.1rem; display: block; margin-bottom: 5px;">📍
-                        Address</strong>
-                    <p style="color: #aaaaaa; line-height: 1.5;">DotShot Digital HQ,<br>Indore, Madhya Pradesh 452001
+                        Our Office</strong>
+                    <p style="color: #aaaaaa; line-height: 1.5;">64, Shree Mangal Nagar, Bicholi Hapsi Road,<br>Indore,
+                        MP – 452016
                     </p>
                 </div>
 
                 <div style="margin-bottom: 25px;">
                     <strong style="color: var(--primary); font-size: 1.1rem; display: block; margin-bottom: 5px;">📞
                         Phone</strong>
-                    <p style="color: #aaaaaa;">+91 98765 43210</p>
+                    <a href="tel:+919201423898" style="color: inherit; text-decoration: none;">
+                        <p style="color: #aaaaaa;">+91 92014 23898</p>
+                    </a>
+                </div>
+
+                <div style="margin-bottom: 25px;">
+                    <strong style="color: var(--primary); font-size: 1.1rem; display: block; margin-bottom: 5px;">✉️
+                        Email</strong>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@dotshotdigital.in" target="_blank"
+                        style="color: inherit; text-decoration: none;">
+                        <p style="color: #aaaaaa;">info@dotshotdigital.in</p>
+                    </a>
                 </div>
 
                 <div>
-                    <strong style="color: var(--primary); font-size: 1.1rem; display: block; margin-bottom: 5px;">✉️
-                        Email</strong>
-                    <p style="color: #aaaaaa;">hello@dotshotdigital.com</p>
+                    <strong style="color: var(--primary); font-size: 1.1rem; display: block; margin-bottom: 5px;">⏰
+                        Working Hours</strong>
+                    <p style="color: #aaaaaa;">Mon – Sat: 10:00 AM – 7:00 PM<br>Sunday: Closed</p>
                 </div>
             </div>
 
             <!-- Google Map -->
-            <div class="lg:w-2/3 rounded-[20px] overflow-hidden shadow-xl"
-                style="border: 1px solid var(--glass-border-alt); min-height: 450px;">
+            <div class="w-full lg:w-2/3 rounded-[20px] overflow-hidden shadow-xl h-[400px] lg:h-[450px]"
+                style="border: 1px solid var(--glass-border-alt);">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117763.55657321556!2d75.78663456385317!3d22.724228428519632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962534f3c7debb7%3A0xe7aedc8adce7b973!2sIndore%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1703661144214!5m2!1sen!2sin"
-                    width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(95%) contrast(85%);"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.36998827287!2d75.90978667289451!3d22.71448547939086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdf8c6e25c74d9cb%3A0x7bf9242466dad488!2sDotShot%20Digital%20Indore!5e0!3m2!1sen!2sin!4v1778434586026!5m2!1sen!2sin"
+                    class="w-full h-full" style="border:0; filter: grayscale(100%) invert(95%) contrast(85%);"
                     allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
