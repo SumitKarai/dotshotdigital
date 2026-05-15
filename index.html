@@ -43,20 +43,32 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .testimonial-slider {
-            overflow: hidden;
+            overflow-x: auto;
             max-width: 100%;
             position: relative;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            /* Hide scrollbar for Firefox */
+            -ms-overflow-style: none;
+            /* Hide scrollbar for IE/Edge */
+            scroll-behavior: smooth;
+        }
+
+        .testimonial-slider::-webkit-scrollbar {
+            display: none;
+            /* Hide scrollbar for Chrome/Safari */
         }
 
         .testimonial-track {
             display: flex;
-            transition: transform 0.6s ease;
+            /* width is automatic with flex and min-width on items */
         }
 
         .testimonial {
             min-width: 100%;
             padding: 30px;
             border-top: 4px solid var(--primary);
+            scroll-snap-align: start;
         }
 
         .testimonial p {
@@ -129,19 +141,19 @@
 
     <main>
         <section class="hero relative overflow-hidden">
-            <!-- Background Video Wrapper -->
-            <div class="absolute inset-0 z-[1] pointer-events-none">
-                <iframe
-                    class="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2"
-                    src="https://www.youtube.com/embed/fS4cH2fky5M?autoplay=1&mute=1&loop=1&playlist=fS4cH2fky5M&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1"
-                    frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+            <!-- Background Image Wrapper -->
+            <div class="absolute inset-0 z-[1] pointer-events-none bg-black">
+                <img class="absolute inset-0 w-full h-full object-cover opacity-50"
+                    src="https://images.unsplash.com/photo-1568952433726-3896e3881c65?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Digital Marketing Excellence">
             </div>
             <!-- Dark Overlay -->
             <!-- <div class="absolute inset-0 bg-slate-900/80 z-[2]"></div> -->
 
             <div class="hero-content relative z-[3]">
-                <h1>Elevate Your Brand with <span style="color: var(--primary)">Digital Excellence</span>
-                </h1>
+                <h1>Elevate Your Brand with <span id="dynamicText"
+                        style="color: var(--primary); display: inline-block; transition: all 0.5s ease;">Digital
+                        Excellence</span></h1>
                 <!-- <p>We craft stunning digital experiences that drive growth, engagement, and lasting
                     impact for your business.</p> -->
                 <div style="display: flex; gap: 15px; justify-content: center;">
@@ -180,12 +192,16 @@
                         <span>Social Media</span><span>•</span>
                         <span>Video Editing</span><span>•</span>
                         <span>Graphic Design</span><span>•</span>
+                        <span>Content Writing</span><span>•</span>
+                        <span>Digital Marketing</span><span>•</span>
                         <!-- Repeated for smooth infinite scroll loop -->
                         <span>Local SEO</span><span>•</span>
                         <span>Web Design</span><span>•</span>
                         <span>Social Media</span><span>•</span>
                         <span>Video Editing</span><span>•</span>
                         <span>Graphic Design</span>
+                        <span>Content Writing</span><span>•</span>
+                        <span>Digital Marketing</span><span>•</span>
                     </div>
                 </div>
             </div>
@@ -492,8 +508,28 @@
     <footer>
         <div class="footer-content">
             <div class="footer-brand">
-                <img src="assets/images/dotshot-logo.png" alt="">
+                <img src="assets/images/dotshot-logo.png" alt="dotshot logo">
                 <p>Your partner in digital transformation and creative excellence.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/dotshotdigital" target="_blank" class="social-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.79 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                        </svg>
+                    </a>
+                    <a href="https://facebook.com/dotshotdigital" target="_blank" class="social-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-8.74h-2.94v-3.407h2.94v-2.511c0-2.917 1.782-4.505 4.382-4.505 1.246 0 2.316.092 2.627.134v3.046l-1.801.001c-1.416 0-1.69.672-1.69 1.66v2.173h3.37l-.439 3.408h-2.931v8.74h6.024c.731 0 1.324-.593 1.324-1.324v-21.351c0-.732-.593-1.325-1.324-1.325z" />
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/company/dotshotdigital" target="_blank" class="social-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                        </svg>
+                    </a>
+                </div>
             </div>
             <div class="footer-links">
                 <h4>Quick Links</h4>
@@ -522,6 +558,7 @@
     </footer>
     <script src="js/main.js"></script>
     <script>
+        const slider = document.querySelector('.testimonial-slider');
         const track = document.querySelector('.testimonial-track');
         const slides = document.querySelectorAll('.testimonial');
         const dotsContainer = document.getElementById('sliderDots');
@@ -538,9 +575,14 @@
 
         function moveToSlide(i) {
             index = i;
-            track.style.transform = `translateX(-${index * 100}%)`;
+            const scrollAmount = slider.offsetWidth * index;
+            slider.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+            updateDots(index);
+        }
+
+        function updateDots(activeIdx) {
             dots.forEach(dot => dot.classList.remove('active'));
-            dots[index].classList.add('active');
+            if (dots[activeIdx]) dots[activeIdx].classList.add('active');
         }
 
         function autoSlide() {
@@ -548,8 +590,45 @@
             moveToSlide(index);
         }
 
+        // Update dots on manual scroll
+        slider.addEventListener('scroll', () => {
+            const currentScroll = slider.scrollLeft;
+            const newIndex = Math.round(currentScroll / slider.offsetWidth);
+            if (newIndex !== index) {
+                index = newIndex;
+                updateDots(index);
+            }
+        });
+
         dots[0].classList.add('active');
-        setInterval(autoSlide, 3000);
+        let autoSlideInterval = setInterval(autoSlide, 5000);
+
+        // Pause auto-slide on interaction
+        slider.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+        slider.addEventListener('mouseleave', () => {
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = setInterval(autoSlide, 5000);
+        });
+        slider.addEventListener('touchstart', () => clearInterval(autoSlideInterval), { passive: true });
+
+        // Dynamic Hero Text Animation
+        const words = ["Digital Excellence", "Creative Branding", "Strategic Growth", "Innovative Design", "Marketing Success"];
+        let wordIndex = 0;
+        const dynamicSpan = document.getElementById('dynamicText');
+
+        function changeText() {
+            dynamicSpan.style.opacity = '0';
+            dynamicSpan.style.transform = 'translateY(-10px)';
+
+            setTimeout(() => {
+                wordIndex = (wordIndex + 1) % words.length;
+                dynamicSpan.textContent = words[wordIndex];
+                dynamicSpan.style.opacity = '1';
+                dynamicSpan.style.transform = 'translateY(0)';
+            }, 500);
+        }
+
+        setInterval(changeText, 3000);
     </script>
 
 </body>

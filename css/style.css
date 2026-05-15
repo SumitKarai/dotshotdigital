@@ -346,15 +346,22 @@ footer {
 
 .footer-links h4 {
     margin-bottom: 1.5rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+    color: var(--primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .footer-links ul {
-    list-style: none;
+    list-style: disc;
+    padding-left: 1.2rem;
 }
 
 .footer-links ul li {
     margin-bottom: 0.8rem;
+    color: var(--primary);
+    /* Makes bullet orange */
 }
 
 .footer-links ul li a {
@@ -364,7 +371,40 @@ footer {
 }
 
 .footer-links ul li a:hover {
+    color: var(--primary);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: 0.3s;
     color: #fff;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    color: #fff;
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
 }
 
 .footer-bottom {
