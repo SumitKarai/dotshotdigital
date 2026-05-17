@@ -123,7 +123,19 @@
 </head>
 
 <body>
+    <!-- Page Loader -->
+    <div id="page-loader">
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+        <div class="loader-dot"></div>
+    </div>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+    <!-- Cursor Glow (desktop only) -->
+    <div id="cursor-glow"></div>
+
     <header>
+
         <a href="index.html" class="logo"><img src="assets/images/dotshot-logo.png" alt="dotshot digital logo"></a>
         <button class="menu-btn" id="menuBtn">
             ☰
@@ -140,15 +152,16 @@
     </header>
 
     <main>
-        <section class="hero relative overflow-hidden">
-            <!-- Background Image Wrapper -->
-            <div class="absolute inset-0 z-[1] pointer-events-none bg-black">
-                <img class="absolute inset-0 w-full h-full object-cover opacity-50"
-                    src="https://images.unsplash.com/photo-1568952433726-3896e3881c65?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                    alt="Digital Marketing Excellence">
+        <section class="hero relative overflow-hidden bg-[#050505]">
+            <!-- Professional Ambient Background -->
+            <div class="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+                <div class="glow-orb orb-1"></div>
+                <div class="glow-orb orb-2"></div>
+                <!-- Subtle Grain/Noise overlay for texture -->
+                <div class="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none"
+                    style="background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');">
+                </div>
             </div>
-            <!-- Dark Overlay -->
-            <!-- <div class="absolute inset-0 bg-slate-900/80 z-[2]"></div> -->
 
             <div class="hero-content relative z-[3]">
                 <h1>Elevate Your Brand with <span id="dynamicText"
@@ -212,21 +225,21 @@
         </section>
 
         <section class="section bg-white-theme" style="padding-top: 80px;">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2>Why Choose Us?</h2>
                 <p>We combine creativity with data-driven strategies to deliver exceptional results.</p>
             </div>
             <div class="grid">
-                <div class="card">
+                <div class="card reveal reveal-delay-1">
                     <h3>Innovative Design</h3>
                     <p>Our designs aren't just pretty; they're built to convert and represent your brand's unique voice.
                     </p>
                 </div>
-                <div class="card">
+                <div class="card reveal reveal-delay-2">
                     <h3>Strategic Growth</h3>
                     <p>We don't just post; we strategize. Every campaign is backed by data and market research.</p>
                 </div>
-                <div class="card">
+                <div class="card reveal reveal-delay-3">
                     <h3>Modern Tech</h3>
                     <p>We use the latest tools and frameworks to ensure your digital presence is fast, secure, and
                         future-proof.</p>
@@ -236,11 +249,11 @@
 
         <section class="stats-section">
             <div class="stats-grid">
-                <div class="stat-card">
+                <div class="stat-card reveal reveal--scale reveal-delay-1">
                     <span class="stat-number" data-target="270">0</span>
                     <p class="stat-label">Happy Clients</p>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card reveal reveal--scale reveal-delay-2">
                     <span class="stat-number" data-target="5">0</span>
                     <p class="stat-label">Years of Experience</p>
                 </div>
@@ -249,13 +262,13 @@
 
         <!-- services section -->
         <section class="section" id="services">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2>Our Specialized Services</h2>
                 <p>We provide end-to-end to help your brand stand out in the digital landscape.</p>
             </div>
             <div class="service-grid">
                 <!-- digital marketing -->
-                <div class="service-card">
+                <div class="service-card reveal reveal-delay-1">
                     <div class="service-image">
                         <img src="https://d6xcmfyh68wv8.cloudfront.net/learn-content/uploads/2024/07/6-effective-types-of-digital-marketing.webp"
                             alt="Digital Marketing">
@@ -265,7 +278,7 @@
                     </div>
                 </div>
                 <!-- Graphic Design -->
-                <div class="service-card">
+                <div class="service-card reveal reveal-delay-2">
                     <div class="service-image">
                         <img src="https://www.andacademy.com/resources/wp-content/uploads/2025/10/451_banner.webp"
                             alt="Graphic Design">
@@ -275,17 +288,17 @@
                     </div>
                 </div>
                 <!-- Product and Brand photoshoot -->
-                <div class="service-card">
+                <div class="service-card reveal reveal-delay-3">
                     <div class="service-image">
                         <img src="https://rvrsp.in/wp-content/uploads/2024/09/professional-dslr-camera-with-zoom-lens.jpg"
                             alt="Product and Brand Photoshoot">
                     </div>
                     <div class="service-info">
-                        <h3>Product & Brand Photoshoot</h3>
+                        <h3>Product &amp; Brand Photoshoot</h3>
                     </div>
                 </div>
                 <!-- Social Media Management -->
-                <div class="service-card">
+                <div class="service-card reveal reveal-delay-4">
                     <div class="service-image">
                         <img src="https://i0.wp.com/famesolutely.com/wp-content/uploads/2024/04/2150063164-jpg.webp?resize=1000%2C667&ssl=1"
                             alt="Social Media Management">
@@ -295,7 +308,7 @@
                     </div>
                 </div>
                 <!-- Web Development -->
-                <div class="service-card">
+                <div class="service-card reveal reveal-delay-5">
                     <div class="service-image">
                         <img src="assets/images/web-dev.png" alt="Web Development">
                     </div>
@@ -304,7 +317,7 @@
                     </div>
                 </div>
                 <!-- Video Editing -->
-                <div class="service-card">
+                <div class="service-card reveal reveal-delay-1">
                     <div class="service-image">
                         <img src="https://sb-wp-assets.storyblocks.com/resources/wp-content/uploads/2024/05/27103627/videoeditorskills_thumbnail-1536x864.jpg"
                             alt="Video Editing">
@@ -314,13 +327,13 @@
                     </div>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 50px;">
+            <div class="reveal" style="text-align: center; margin-top: 50px;">
                 <a href="pages/services.html" class="btn btn-outline">See All Service Details</a>
             </div>
         </section>
 
         <section class="section bg-white-theme">
-            <div class="section-header">
+            <div class="section-header reveal">
                 <h2>Client Stories</h2>
                 <p>See how our clients have transformed with our digital marketing and creative solutions.</p>
             </div>
@@ -362,7 +375,7 @@
 
     <!-- faq section -->
     <section class="section">
-        <div class="section-header">
+        <div class="section-header reveal">
             <h2> Frequently Asked Questions </h2>
             <p> Here are some of the most common questions we receive from our clients. </p>
         </div>
@@ -422,7 +435,7 @@
             <details class="faq-item">
                 <summary>Which social media platforms do you manage?</summary>
                 <div class="faq-answer">
-                    <p>We specialize in Instagram, Facebook, LinkedIn, and Twitter. We handle everything from content
+                    <p>We specialize in Instagram, LinkedIn, and Twitter. We handle everything from content
                         strategy and post scheduling to community management and paid advertising.</p>
                 </div>
             </details>
@@ -511,19 +524,15 @@
                 <img src="assets/images/dotshot-logo.png" alt="dotshot logo">
                 <p>Your partner in digital transformation and creative excellence.</p>
                 <div class="social-links">
-                    <a href="https://www.instagram.com/dotshotdigital" target="_blank" class="social-icon">
+                    <a href="https://www.instagram.com/dotshotdigital?igsh=azlxbDR0Nmszd205" target="_blank"
+                        class="social-icon">
                         <svg viewBox="0 0 24 24">
                             <path
                                 d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.79 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                         </svg>
                     </a>
-                    <a href="https://facebook.com/dotshotdigital" target="_blank" class="social-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path
-                                d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-8.74h-2.94v-3.407h2.94v-2.511c0-2.917 1.782-4.505 4.382-4.505 1.246 0 2.316.092 2.627.134v3.046l-1.801.001c-1.416 0-1.69.672-1.69 1.66v2.173h3.37l-.439 3.408h-2.931v8.74h6.024c.731 0 1.324-.593 1.324-1.324v-21.351c0-.732-.593-1.325-1.324-1.325z" />
-                        </svg>
-                    </a>
-                    <a href="https://linkedin.com/company/dotshotdigital" target="_blank" class="social-icon">
+                    <a href="https://www.linkedin.com/company/dotshot-digital-indore/?viewAsMember=true" target="_blank"
+                        class="social-icon">
                         <svg viewBox="0 0 24 24">
                             <path
                                 d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />

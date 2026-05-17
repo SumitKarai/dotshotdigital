@@ -105,4 +105,88 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+
+    // ══════════════════════════════════════════
+    //   ANIMATION ENGINE
+    // ══════════════════════════════════════════
+
+    // 1. Page Loader — dismiss after page loads
+    const loader = document.getElementById('page-loader');
+    if (loader) {
+        window.addEventListener('load', () => {
+            setTimeout(() => loader.classList.add('loaded'), 300);
+        });
+        // Fallback: dismiss after 2s even if load event is slow
+        setTimeout(() => loader && loader.classList.add('loaded'), 2000);
+    }
+
+    // 2. Scroll Progress Bar
+    const progressBar = document.getElementById('scroll-progress');
+    if (progressBar) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+            const pct = maxScroll > 0 ? (scrolled / maxScroll) * 100 : 0;
+            progressBar.style.width = pct + '%';
+        }, { passive: true });
+    }
+
+    // 3. Cursor Glow (desktop only)
+    const cursorGlow = document.getElementById('cursor-glow');
+    if (cursorGlow && window.innerWidth > 768) {
+        document.addEventListener('mousemove', (e) => {
+            cursorGlow.style.left = e.clientX + 'px';
+            cursorGlow.style.top  = e.clientY + 'px';
+            cursorGlow.style.opacity = '1';
+        }, { passive: true });
+        document.addEventListener('mouseleave', () => {
+            cursorGlow.style.opacity = '0';
+        });
+    }
+
+    // 4. Scroll Reveal — Intersection Observer
+    const revealEls = document.querySelectorAll('.reveal');
+    if (revealEls.length) {
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        revealEls.forEach(el => revealObserver.observe(el));
+    }
+
+    // 5. Section header underline reveal
+    const sectionHeaders = document.querySelectorAll('.section-header');
+    if (sectionHeaders.length) {
+        const headerObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    headerObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sectionHeaders.forEach(h => headerObserver.observe(h));
+    }
+
+    // 6. Button Ripple Effect
+    document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            ripple.style.width  = ripple.style.height = size + 'px';
+            ripple.style.left   = (e.clientX - rect.left  - size / 2) + 'px';
+            ripple.style.top    = (e.clientY - rect.top   - size / 2) + 'px';
+            this.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 700);
+        });
+    });
 });
