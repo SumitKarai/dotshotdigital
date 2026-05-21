@@ -689,3 +689,157 @@ footer {
     transition: width 0.1s linear;
     border-radius: 0 2px 2px 0;
 }
+
+/* ═══════════════════════════════════════
+   STACKING SCROLL CARDS
+   ═══════════════════════════════════════ */
+.stack-cards-wrapper {
+    position: relative;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 5% 60px;
+    /* Each card gets its own sticky zone */
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.stack-card {
+    position: sticky;
+    top: 100px;
+    /* offset below the fixed header */
+    border-radius: 28px;
+    overflow: hidden;
+    min-height: 420px;
+    background: linear-gradient(135deg, var(--card-color), var(--card-color-dark));
+    margin-bottom: 24px;
+    box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.08);
+    will-change: transform;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+    /* Stagger scale: card 0 = scale(1), 1 = scale(0.97), ... applied via JS */
+}
+
+.stack-card:hover {
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.stack-card-inner {
+    position: relative;
+    z-index: 2;
+    padding: 52px 52px 44px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Decorative background blob */
+.sc-bg-shape {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 28px;
+    pointer-events: none;
+}
+
+.sc-bg-shape::before {
+    content: '';
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    right: -80px;
+    top: -80px;
+}
+
+.sc-bg-shape::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    left: 30%;
+    bottom: -60px;
+}
+
+.sc-icon {
+    font-size: 2.8rem;
+    line-height: 1;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+.sc-tag {
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.sc-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.15;
+    margin: 0;
+}
+
+.sc-desc {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.82);
+    line-height: 1.7;
+    max-width: 540px;
+    margin: 0;
+}
+
+.sc-stats {
+    display: flex;
+    gap: 36px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.sc-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sc-stat span {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.sc-stat label {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Shrink cards that are "under" the current active card */
+.stack-card[data-stacked] {
+    transform: scale(var(--stack-scale, 1));
+    filter: brightness(var(--stack-brightness, 1));
+}
+
+@media (max-width: 640px) {
+    .stack-card-inner {
+        padding: 36px 28px 32px;
+    }
+
+    .sc-stats {
+        gap: 20px;
+    }
+
+    .sc-stat span {
+        font-size: 1.3rem;
+    }
+}
