@@ -5,7 +5,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (currentPath.endsWith(href) || (currentPath.endsWith('/') && href === 'index.html')) {
+        const normalizedPath = currentPath.replace(/\/$/, '') || '/';
+        const normalizedHref = href.replace('.html', '').replace(/\/?index$/, '/').replace(/\/$/, '') || '/';
+        
+        if (normalizedPath === normalizedHref || (normalizedPath === '/' && normalizedHref === '/')) {
+            link.classList.add('active');
+        } else if (normalizedHref !== '/' && normalizedPath.endsWith(normalizedHref)) {
             link.classList.add('active');
         }
     });
