@@ -43,6 +43,22 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        /* Enhanced deep shadow for all portfolio cards */
+        .glass-card:hover {
+            transform: translateY(-8px) !important;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 
+                        0 15px 30px rgba(251, 146, 60, 0.3),
+                        0 8px 15px rgba(0, 0, 0, 0.4) !important;
+        }
+
+        /* Ensure CTA button also gets enhanced hover effect */
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05) !important;
+            box-shadow: 0 20px 40px rgba(249, 115, 22, 0.4), 
+                        0 10px 20px rgba(251, 146, 60, 0.3) !important;
         }
 
         .project-overlay {
@@ -172,7 +188,7 @@
                     Crafting <span class="text-gradient">Digital</span><br>Masterpieces
                 </h1>
                 <p class="text-xl md:text-2xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-                    We don't just build design, video or website; we create immersive digital journeys that define
+                    We don't just build design, video or website. We create immersive digital journeys that define
                     brands and drive unprecedented growth.
                 </p>
             </div>
@@ -226,7 +242,7 @@
                             class="glass-card rounded-2xl overflow-hidden h-full flex flex-col transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl block">
 
                             <!-- Your static high-res screenshot -->
-                            <img src="../assets/web-dev/Screenshot 2026-05-21 074626.png"
+                            <img src="../assets/web-dev/settleezy.png"
                                 alt="SettleEzy Website Preview" class="w-full h-64 object-cover" />
 
                             <div class="p-6 flex-grow">
@@ -240,23 +256,9 @@
 
                         </a>
 
-                        <a href="https://www.settleezy.de" target="_blank" rel="noopener noreferrer"
-                            class="glass-card rounded-2xl overflow-hidden h-full flex flex-col transition-transform duration-300 hover:-translate-y-2 hover:shadow-xl block">
+                        
 
-                            <!-- Your static high-res screenshot -->
-                            <img src="../assets/web-dev/Screenshot 2026-05-21 074626.png"
-                                alt="SettleEzy Website Preview" class="w-full h-64 object-cover" />
 
-                            <div class="p-6 flex-grow">
-                                <h3 class="text-xl font-bold text-white">settleezy.de</h3>
-
-                                <!-- Optional subtle indicator arrow -->
-                                <div class="mt-4 text-xs font-semibold text-sky-400 flex items-items-center gap-1">
-                                    Visit Live Site ↗
-                                </div>
-                            </div>
-
-                        </a>
                     </div>
                 </div>
 
@@ -267,7 +269,7 @@
                     <span class="text-gradient">Marketing</span>
                 </div>
 
-                <div class="portfolio-item" data-category="marketing">
+                <!-- <div class="portfolio-item" data-category="marketing">
                     <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
                         <img src="../images/project2.jpg" class="w-full h-64 object-cover" />
                         <div class="p-6 flex-grow">
@@ -275,108 +277,18 @@
                             <p class="text-slate-400 text-sm">Marketing</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Video Editing Section -->
                 <div class="portfolio-item category-title" data-category="video">
                     <span class="text-gradient">Video Editing</span>
                 </div>
 
-                <!-- Video Editing 1 -->
-                <div class="portfolio-item" data-category="video">
-                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
-                        <div class="instagram-wrapper">
-                            <blockquote class="instagram-media" data-instgrm-captioned
-                                data-instgrm-permalink="https://www.instagram.com/reel/DRTuIERDDN3/?utm_source=ig_embed&amp;utm_campaign=loading"
-                                data-instgrm-version="14">
-                                <a href="https://www.instagram.com/reel/DRTuIERDDN3/">View Reel</a>
-                            </blockquote>
-                        </div>
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-xl font-bold">Your dent clinic</h3>
-                        </div>
-                    </div>
-                </div>
+               
 
-                <!-- Video Editing 2 -->
-                <div class="portfolio-item" data-category="video">
-                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
-                        <div class="instagram-wrapper">
-                            <blockquote class="instagram-media" data-instgrm-captioned
-                                data-instgrm-permalink="https://www.instagram.com/reel/DRZJTdTDLM0/?utm_source=ig_embed&amp;utm_campaign=loading"
-                                data-instgrm-version="14">
-                                <a href="https://www.instagram.com/reel/DRZJTdTDLM0/">View Reel</a>
-                            </blockquote>
-                        </div>
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-xl font-bold">Your dent clinic</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Video Editing 3 -->
-                <div class="portfolio-item" data-category="video">
-                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
-                        <div class="instagram-wrapper">
-                            <blockquote class="instagram-media" data-instgrm-captioned
-                                data-instgrm-permalink="https://www.instagram.com/reel/DQ-8dAtjAP7/?utm_source=ig_embed&amp;utm_campaign=loading"
-                                data-instgrm-version="14">
-                                <a href="https://www.instagram.com/reel/DQ-8dAtjAP7/">View Reel</a>
-                            </blockquote>
-                        </div>
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-xl font-bold">Wedding Invitation</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Video Editing 4 -->
-                <div class="portfolio-item" data-category="video">
-                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
-                        <div class="instagram-wrapper">
-                            <blockquote class="instagram-media" data-instgrm-captioned
-                                data-instgrm-permalink="https://www.instagram.com/reel/DK_YyXZTMw6/?utm_source=ig_embed&amp;utm_campaign=loading"
-                                data-instgrm-version="14">
-                                <a href="https://www.instagram.com/reel/DK_YyXZTMw6/">View Reel</a>
-                            </blockquote>
-                        </div>
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-xl font-bold">Bridal Video Shoot</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Video Editing 5 -->
-                <div class="portfolio-item" data-category="video">
-                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
-                        <div class="instagram-wrapper">
-                            <blockquote class="instagram-media" data-instgrm-captioned
-                                data-instgrm-permalink="https://www.instagram.com/reel/DTU_8odjUEx/?utm_source=ig_embed&amp;utm_campaign=loading"
-                                data-instgrm-version="14">
-                                <a href="https://www.instagram.com/reel/DTU_8odjUEx/">View Reel</a>
-                            </blockquote>
-                        </div>
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-xl font-bold">settleezy.berlin</h3>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Video Editing 6 -->
-                <div class="portfolio-item" data-category="video">
-                    <div class="glass-card rounded-2xl overflow-hidden h-full flex flex-col">
-                        <div class="instagram-wrapper">
-                            <blockquote class="instagram-media" data-instgrm-captioned
-                                data-instgrm-permalink="https://www.instagram.com/reel/DTP_FlIDXrZ/?utm_source=ig_embed&amp;utm_campaign=loading"
-                                data-instgrm-version="14">
-                                <a href="https://www.instagram.com/reel/DTP_FlIDXrZ/">View Reel</a>
-                            </blockquote>
-                        </div>
-                        <div class="p-6 flex-grow">
-                            <h3 class="text-xl font-bold">settleezy.berlin</h3>
-                        </div>
-                    </div>
-                </div>
+               
+               
+               
             </div>
         </section>
 
@@ -388,7 +300,7 @@
                     Let's build your <span class="text-gradient">legacy</span>.
                 </h2>
                 <a href="contact"
-                    class="inline-block px-12 py-5 bg-orange-500 text-white font-black rounded-full hover:bg-orange-600 transition-all hover:scale-105 shadow-2xl shadow-orange-500/40 text-lg">
+                    class="cta-button inline-block px-12 py-5 bg-orange-500 text-white font-black rounded-full hover:bg-orange-600 transition-all hover:scale-105 shadow-2xl shadow-orange-500/40 text-lg">
                     Start a Conversation
                 </a>
             </div>
